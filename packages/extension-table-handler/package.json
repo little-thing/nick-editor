@@ -1,0 +1,69 @@
+{
+  "name": "@nick-editor/extension-table-handler",
+  "description": "table handler extension for tiptap",
+  "version": "1.0.0",
+  "homepage": "https://tiptap.dev",
+  "keywords": [
+    "tiptap",
+    "tiptap extension"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./index.css": "./dist/index.css"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "umd": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "devDependencies": {
+    "@nick-editor/extension-table": "workspace:*",
+    "@libs/ui": "workspace:*",
+    "@libs/eslint-config": "workspace:*",
+    "@libs/typescript-config": "workspace:*",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tiptap/core": "^2.10.4",
+    "@tiptap/extension-table-header": "^2.3.0",
+    "@tiptap/extension-table-row": "^2.3.0",
+    "@tiptap/pm": "^2.11.2",
+    "@tiptap/react": "^2.4.0",
+    "@types/node": "^22.10.7",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "classnames": "^2.5.1",
+    "cssnano": "^7.0.6",
+    "lucide-react": "^0.471.1",
+    "postcss": "^8.4.49",
+    "postcss-import": "^16.1.0",
+    "react": "^18.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-scoped-groups": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^2.7.0",
+    "@tiptap/extension-table-header": "^2.3.0",
+    "@tiptap/extension-table-row": "^2.3.0",
+    "@tiptap/pm": "^2.7.0",
+    "@tiptap/react": "^2.4.0",
+    "lucide-react": "^0.471.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && rollup -c"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "nick-editor",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "shared/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "publish-packages": "turbo run build && changeset version && changeset publish"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@changesets/cli": "^2.27.12",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.3",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-url": "^8.0.2",
+    "@shared/rollup-config": "workspace:*",
+    "@svgr/rollup": "^8.1.0",
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.4.49",
+    "postcss-import": "^16.1.0",
+    "prettier": "^3.3.3",
+    "rollup": "^4.27.4",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "turbo": "^2.3.3",
+    "typescript": "5.5.4"
+  },
+  "overrides": {
+    "@rollup/pluginutils": "^5.1.3",
+    "esbuild": "0.24.2"
+  },
+  "resolutions": {
+    "esbuild": "0.24.2"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@tiptap/core": "^2.11.2"
+  }
+}

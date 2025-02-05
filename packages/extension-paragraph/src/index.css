@@ -1,0 +1,5 @@
+.ProseMirror {
+    p {
+        white-space: pre-wrap;
+    }
+}

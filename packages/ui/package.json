@@ -1,0 +1,77 @@
+{
+  "name": "@libs/ui",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./components/*": {
+      "types": "./dist/types/components/*.d.ts",
+      "import": "./dist/esm/components/*.js",
+      "require": "./dist/cjs/components/*.js"
+    },
+    "./lib/*": {
+      "types": "./dist/types/lib/*.d.ts",
+      "import": "./dist/esm/lib/*.js",
+      "require": "./dist/cjs/lib/*.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build && tsc --emitDeclarationOnly",
+    "build:deps": "father prebundle",
+    "prepublishOnly": "father doctor && npm run build"
+  },
+  "devDependencies": {
+    "father": "^4.5.2",
+    "@libs/eslint-config": "workspace:*",
+    "@libs/typescript-config": "workspace:*",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tiptap/core": "^2.10.4",
+    "@tiptap/extension-table-header": "^2.3.0",
+    "@tiptap/extension-table-row": "^2.3.0",
+    "@tiptap/pm": "^2.11.2",
+    "@tiptap/react": "^2.4.0",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "classnames": "^2.5.1",
+    "clsx": "^2.1.1",
+    "cssnano": "^7.0.6",
+    "lucide-react": "^0.471.1",
+    "postcss": "^8.4.49",
+    "postcss-import": "^16.1.0",
+    "react": "^18.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-scoped-groups": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^2.7.0",
+    "@tiptap/extension-table-header": "^2.3.0",
+    "@tiptap/extension-table-row": "^2.3.0",
+    "@tiptap/pm": "^2.7.0",
+    "@tiptap/react": "^2.4.0",
+    "lucide-react": "^0.471.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.1",
+    "@tippyjs/react": "^4.2.6",
+    "tippy.js": "^6.3.7",
+    "@radix-ui/react-popover": "^1.1.4"
+  }
+}

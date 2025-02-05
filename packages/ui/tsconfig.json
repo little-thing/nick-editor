@@ -1,0 +1,35 @@
+{
+  "extends": "@libs/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es2019",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "react",
+    "importHelpers": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "rootDir": "src",
+    "allowJs": true,
+    "checkJs": false,
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "emitDeclarationOnly": true,
+    "paths": {
+      "@nick-editor/*": ["packages/*/dist","packages/*/src"]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
+}

@@ -1,0 +1,37 @@
+{
+  "extends": "@libs/typescript-config/react-library.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "types": [],
+    "paths": {
+      "@nick-editor/*": ["packages/*/src", "packages/*/dist"],
+      "@/*": ["./*"]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+    "tailwind.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "*.config.js",
+    "*.config.ts",
+    "*.config.cjs"
+  ]
+}

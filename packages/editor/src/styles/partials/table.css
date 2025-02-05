@@ -1,0 +1,108 @@
+.ProseMirror {
+  .table-container {
+    @apply my-12 relative;
+  }
+
+  .tableWrapper {
+    @apply w-full  my-12 overflow-x-auto relative overflow-y-hidden;
+    padding-top: 12px;
+  }
+
+  table {
+    @apply border-collapse border-black/10 rounded box-border max-w-full overflow-auto;
+    @apply dark:border-white/20;
+
+    tr {
+      height: 1px;
+      position: relative;
+    }
+
+    td,
+    th {
+      @apply border border-black/10 min-w-[100px] p-2 relative text-left align-top h-[1px] ;
+      @apply dark:border-white/20;
+
+      &:first-of-type:not(a) {
+        @apply mt-0;
+      }
+
+      p {
+        @apply m-0;
+
+        & + p {
+          @apply mt-2;
+        }
+      }
+    }
+
+    th {
+      @apply font-bold;
+    }
+
+    .column-resize-handle {
+      @apply -bottom-[2px] flex pointer-events-none absolute -right-1 top-0 w-2;
+
+      &::before {
+        @apply bg-black/20 h-full w-[1px] ml-2;
+        @apply dark:bg-white/20;
+        content: '';
+      }
+    }
+
+    .selectedCell {
+      @apply bg-black/5 border-black/20 border-double;
+      @apply dark:bg-white/10 dark:border-white/20;
+    }
+
+    .grip-column,
+    .grip-row {
+      @apply items-center bg-black/5 cursor-pointer flex justify-center z-10;
+      @apply dark:bg-white/10;
+    }
+
+    .grip-column {
+      position: absolute !important;
+      @apply w-[calc(100%+1px)] border-l border-black/20 h-3 left-0 -ml-[1px];
+      @apply dark:border-white/20;
+      top: -12px;
+
+      &:hover,
+      &.selected {
+        &::before {
+          content: '';
+          @apply w-2.5;
+        }
+      }
+
+      &:hover {
+        @apply bg-black/10;
+        @apply dark:bg-white/20;
+
+        &::before {
+          @apply border-b-2 border-dotted border-black/60;
+          @apply dark:border-white/60;
+        }
+      }
+
+      &.first {
+        @apply border-transparent rounded-tl-sm;
+      }
+
+      &.last {
+        @apply rounded-tr-sm;
+      }
+
+      &.selected {
+        @apply bg-black/30 border-black/30 shadow-sm;
+        @apply dark:bg-white/30 dark:border-white/30;
+
+        &::before {
+          @apply border-b-2 border-dotted;
+        }
+      }
+    }
+
+  }
+
+
+}

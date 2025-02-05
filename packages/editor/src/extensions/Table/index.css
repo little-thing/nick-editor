@@ -1,0 +1,31 @@
+.tableWrapper {
+  @apply relative;
+
+  table {
+    @apply table-fixed;
+    border-collapse: collapse;
+
+    tr {
+      height: auto;
+      min-height: 30px;
+    }
+  }
+
+  td {
+    position: relative;
+    min-height: 30px;
+    vertical-align: top;
+    padding: 8px;
+    height: 100%;
+    > * {
+      min-height: 0;
+    }
+  }
+}
+
+
+.tableWrapper td {
+  position: relative;
+  min-height: 30px;
+}
+

@@ -1,0 +1,50 @@
+.menu-list-surface {
+  @apply text-black dark:text-white max-h-[350px] overflow-auto flex-wrap w-[240px] dark:bg-neutral-800;
+}
+
+.menu-list-grid {
+  @apply grid grid-cols-1 gap-2;
+}
+
+.menu-list-format-group {
+  @apply flex justify-between items-center p-2;
+}
+
+.menu-list-format-button {
+  @apply justify-center h-8 w-8 hover:bg-neutral-100 dark:hover:bg-neutral-700;
+}
+
+.menu-list-group-title {
+  @apply text-[#999999] dark:text-neutral-400 text-xs ml-3 font-extralight col-[1/-1] font-extralight tracking-wider select-none uppercase;
+}
+
+.menu-list-basic-group {
+  @apply grid grid-cols-2 gap-1 px-2 py-1;
+}
+
+.menu-list-basic-button {
+  @apply flex gap-2 p-1 h-8 hover:bg-neutral-100 dark:hover:bg-neutral-700;
+}
+
+.menu-list-advanced-group {
+  @apply grid grid-cols-1;
+}
+
+.menu-list-advanced-button {
+  @apply flex gap-2.5  hover:bg-neutral-100 dark:hover:bg-neutral-700;
+}
+
+.menu-list-button-text {
+  @apply text-[#1F1F1F] dark:text-white;
+}
+
+.menu-list-icon-wrapper {
+  @apply w-8 h-6 flex items-center justify-center;
+}
+
+/* Active states for buttons */
+.menu-list-format-button[data-state='active'],
+.menu-list-basic-button[data-state='active'],
+.menu-list-advanced-button[data-state='active'] {
+  @apply bg-neutral-100 dark:bg-neutral-700;
+} 

@@ -1,0 +1,35 @@
+{
+  "extends": "@libs/typescript-config/base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "paths": {
+      "@nick-editor/*": ["../packages/*/src", "../packages/*/dist"],
+      "@/*": ["./*"]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "*.config.js",
+    "*.config.ts",
+    "*.config.cjs"
+  ]
+}

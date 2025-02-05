@@ -1,0 +1,28 @@
+{
+  "name": "demos",
+  "version": "0.1.1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev ",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nick-editor/editor": "workspace:*",
+    "next": "14.2.23",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "yjs": "^13.6.22"
+  },
+  "devDependencies": {
+    "@libs/eslint-config": "workspace:*",
+    "@libs/typescript-config": "workspace:*",
+    "@types/node": "^20",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.5.4"
+  }
+}

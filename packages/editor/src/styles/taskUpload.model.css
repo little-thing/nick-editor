@@ -1,0 +1,72 @@
+/* .node-imageUpload{
+    height: 60px;
+}
+.node-imageUpload svg{
+    display: none;
+}
+.node-imageUpload div div div{
+    transform: scale(0.88);
+    padding: 0;
+    margin-top: -3px;
+}
+
+.ant-upload-list{
+    margin: 0;
+    height: 60px;
+    position: relative;
+}
+.ant-upload.ant-upload-select-picture-card > .ant-upload{
+    height: 60px !important;
+    width: 100% !important;
+}
+.ant-upload-list button{
+    transform: scale(0.8);
+}
+.ant-upload-span{
+    transform: scale(2);
+}
+.ant-upload-list-picture-card .ant-upload-list-item,.ant-upload-list-picture-card-container,.ant-upload.ant-upload-select-picture-card{
+    height: 60px !important;
+}
+.ant-upload-list-picture .ant-upload-list-item, .ant-upload-list-picture-card .ant-upload-list-item{
+    padding: 0px !important;
+}
+.ant-upload-list-picture-card-container,.ant-upload.ant-upload-select-picture-card{
+    width: 100% !important;
+}
+.ant-upload.ant-upload-select-picture-card,.ant-upload-list-picture-card-container{
+    position: absolute !important;
+    top: 0;
+    left: 0;
+}
+.ant-upload-list-picture-card .ant-upload-list-item-actions .anticon-eye, .ant-upload-list-picture-card .ant-upload-list-item-actions .anticon-download, .ant-upload-list-picture-card .ant-upload-list-item-actions .anticon-delete{
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+    border: none !important;
+}
+.ant-upload-list-picture-card .ant-upload-list-item-actions a{
+    display: none;
+}
+/* .node-imageUpload div div div div:nth-child(1):before{
+    content: "拖拽图片于此 或"; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    color: inherit;
+    background-color: #ffffff;
+    width: 100%;
+    transform: translate(-50%, -50%); 
+    font-size: inherit; 
+}
+.node-imageUpload button::before {
+    content: "选择上传图片"; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    background-color: #000000;
+    width: 100%;
+    transform: translate(-50%, -50%); 
+    color: inherit; 
+    font-size: inherit; 
+  } */

@@ -1,0 +1,34 @@
+.ProseMirror {
+
+  @apply relative;
+
+  /* Placeholder Styles */
+  .is-empty::before {
+    @apply text-black/40 dark:text-white/40 float-left h-0 pointer-events-none w-full;
+  }
+
+  &.ProseMirror-focused {
+    /* Slashmenu Placeholder */
+    > p.has-focus.is-empty::before {
+      content: '输入  /  唤起更多';
+    }
+
+    > [data-type='columns'] > [data-type='column'] > p.is-empty.has-focus::before {
+      content: '输入  /  唤起更多';
+    }
+  }
+
+  /* Blockquote Placeholder */
+  blockquote .is-empty:not(.is-editor-empty):first-child:last-child::before {
+    content: '输入引用';
+  }
+
+  blockquote + figcaption.is-empty:not(.is-editor-empty)::before {
+    content: '引用出处';
+  }
+
+  [data-placeholder][data-suggestion]::before,
+  [data-placeholder][data-suggestion] *::before {
+    content: none !important;
+  }
+}

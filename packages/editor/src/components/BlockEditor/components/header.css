@@ -1,0 +1,51 @@
+.header-button {
+    @apply h-[24px] w-[24px] flex justify-center rounded cursor-pointer items-center;
+
+    &:hover {
+        @apply bg-[#f2f2f2] dark:bg-neutral-700;
+    }
+}
+
+.header-button.is-active {
+    @apply bg-[#e5e5e5] dark:bg-neutral-600;
+}
+
+.header-button.is-disabled {
+    @apply cursor-not-allowed;
+}
+
+.lake-colorboard-group-item-special {
+    position: relative;
+}
+
+.lake-colorboard-group-item-special::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 22px;
+    height: 0;
+    border-bottom: 2px solid #ff5151;
+    transform: rotate(-45deg);
+}
+
+.lake-colorboard-group-item {
+    width: 24px;
+    height: 24px;
+    padding: 2px 2px;
+    display: inline-block;
+    border-radius: 3px 3px;
+    border: 1px solid transparent;
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.lake-colorboard-group-item > span {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    display: block;
+    border-radius: 2px 2px;
+    border: 1px solid rgba(0,0,0,0.04);
+}
