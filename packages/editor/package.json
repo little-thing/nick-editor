@@ -15,6 +15,10 @@
       "import": "./dist/esm/index.css",
       "require": "./dist/cjs/index.css"
     },
+    "./styles/*": {
+      "import": "./dist/esm/styles/*.css",
+      "require": "./dist/cjs/styles/*.css"
+    },
     "./components/*": {
       "types": "./dist/types/components/*.d.ts",
       "import": "./dist/esm/components/*.js",
@@ -47,8 +51,9 @@
   "scripts": {
     "clean": "rm -rf dist",
     "dev": "father dev",
-    "build": "father build && tsc --emitDeclarationOnly",
+    "build": "ANALYZE=1 father build && tsc --emitDeclarationOnly ",
     "build:deps": "father prebundle",
+    "build:css": "NODE_ENV=production postcss src/styles/**/*.css --base src --dir dist/esm/styles --config postcss.config.cjs && NODE_ENV=production postcss src/styles/**/*.css --base src --dir dist/cjs/styles --config postcss.config.cjs",
     "prepublishOnly": "father doctor && npm run build"
   },
   "private": false,
@@ -73,9 +78,9 @@
   ],
   "author": "little-thing <1107589563@qq.com>",
   "peerDependencies": {
-    "@tiptap/core": "^2.11.2",
     "@nick-editor/extension-table": "^1.0.0",
     "@nick-editor/extension-table-handler": "^1.0.0",
+    "@tiptap/core": "^2.11.2",
     "@tiptap/pm": "^2.4.0",
     "lucide-react": "^0.49.0",
     "react": "^18.0.0",
@@ -167,6 +172,7 @@
     "eslint-plugin-react-refresh": "^0.4.18",
     "father": "^4.3.8",
     "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

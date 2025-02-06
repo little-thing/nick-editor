@@ -10,6 +10,9 @@ export default defineConfig({
     output: 'dist/cjs',
     ignores: ['**/demos/**', '**/*.test.{js,jsx,ts,tsx}'],
   },
+  umd: {
+    output: 'dist/umd',
+  },
   alias: {
     '@': path.resolve(__dirname, './src'),
   },
