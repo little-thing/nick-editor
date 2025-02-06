@@ -1,6 +1,7 @@
 {
   "name": "@libs/eslint-config",
   "version": "0.0.0",
+  "description": "Shared ESLint configurations for nick-editor",
   "type": "module",
   "private": true,
   "exports": {
@@ -8,6 +9,16 @@
     "./next-js": "./next.js",
     "./react-internal": "./react-internal.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little-thing/nick-editor.git",
+    "directory": "packages/eslint-config"
+  },
+  "bugs": {
+    "url": "https://github.com/little-thing/nick-editor/issues"
+  },
+  "homepage": "https://github.com/little-thing/nick-editor/tree/main/packages/eslint-config#readme",
+  "author": "little-thing <1107589563@qq.com>",
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@next/eslint-plugin-next": "^15.1.0",

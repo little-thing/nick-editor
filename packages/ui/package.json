@@ -1,6 +1,7 @@
 {
   "name": "@libs/ui",
   "version": "0.0.0",
+  "description": "UI components for nick-editor",
   "type": "module",
   "private": true,
   "main": "./dist/cjs/index.js",
@@ -73,5 +74,15 @@
     "@tippyjs/react": "^4.2.6",
     "tippy.js": "^6.3.7",
     "@radix-ui/react-popover": "^1.1.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little-thing/nick-editor.git",
+    "directory": "packages/ui"
+  },
+  "bugs": {
+    "url": "https://github.com/little-thing/nick-editor/issues"
+  },
+  "homepage": "https://github.com/little-thing/nick-editor/tree/main/packages/ui#readme",
+  "author": "little-thing <1107589563@qq.com>"
 }

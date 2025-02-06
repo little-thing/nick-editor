@@ -1,8 +1,19 @@
 {
   "name": "@libs/typescript-config",
   "version": "0.0.0",
+  "description": "Shared TypeScript configurations for nick-editor",
   "private": true,
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little-thing/nick-editor.git",
+    "directory": "packages/typescript-config"
+  },
+  "bugs": {
+    "url": "https://github.com/little-thing/nick-editor/issues"
+  },
+  "homepage": "https://github.com/little-thing/nick-editor/tree/main/packages/typescript-config#readme",
+  "author": "little-thing <1107589563@qq.com>",
   "publishConfig": {
     "access": "public"
   }

@@ -1,5 +1,11 @@
 # @nick-editor/editor
 
+## 1.0.5
+
+### Patch Changes
+
+- 修复文档
+
 ## 1.0.4
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 # @nick-editor/editor
 
-[中文](./README.zh-CN.md) | English
+[中文](README.zh-CN.md) | English
 
 A powerful rich text editor that replicates the smooth editing experience of Yuque (语雀), built on top of Tiptap.
 

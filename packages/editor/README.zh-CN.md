@@ -1,6 +1,6 @@
 # @nick-editor/editor
 
-中文 | [English](./README.md)
+中文 | [English](README.md)
 
 一个强大的富文本编辑器，基于 Tiptap 构建，致力于还原语雀的便捷编辑体验。
 

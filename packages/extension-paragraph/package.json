@@ -1,8 +1,8 @@
 {
   "name": "@nick-editor/extension-paragraph",
   "description": "paragraph extension for tiptap",
-  "version": "1.0.0",
-  "homepage": "https://tiptap.dev",
+  "version": "1.0.1",
+  "homepage": "https://github.com/little-thing/nick-editor/tree/main/packages/extension-paragraph#readme",
   "keywords": [
     "tiptap",
     "tiptap extension"
@@ -25,9 +25,21 @@
   "umd": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "files": [
-    "src",
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little-thing/nick-editor.git",
+    "directory": "packages/extension-paragraph"
+  },
+  "bugs": {
+    "url": "https://github.com/little-thing/nick-editor/issues"
+  },
+  "author": "little-thing <1107589563@qq.com>",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && rollup -c"
+  },
   "devDependencies": {
     "@libs/eslint-config": "workspace:*",
     "@libs/typescript-config": "workspace:*",
@@ -35,14 +47,5 @@
   },
   "peerDependencies": {
     "@tiptap/core": "^2.7.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ueberdosis/tiptap",
-    "directory": "packages/extension-paragraph"
-  },
-  "scripts": {
-    "clean": "rm -rf dist",
-    "build": "npm run clean && rollup -c"
   }
 }

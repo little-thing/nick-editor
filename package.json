@@ -8,10 +8,11 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:packages": "turbo run build --filter=@nick-editor/*",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "publish-packages": "turbo run build && changeset version && changeset publish"
+    "publish-packages": "turbo run build:packages && changeset version && changeset publish"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -53,5 +54,20 @@
   },
   "dependencies": {
     "@tiptap/core": "^2.11.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little-thing/nick-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/little-thing/nick-editor/issues"
+  },
+  "homepage": "https://github.com/little-thing/nick-editor#readme",
+  "keywords": [
+    "editor",
+    "rich-text",
+    "tiptap",
+    "prosemirror",
+    "wysiwyg"
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "name": "@nick-editor/extension-table-handler",
   "description": "table handler extension for tiptap",
-  "version": "1.0.0",
-  "homepage": "https://tiptap.dev",
+  "version": "1.0.1",
+  "homepage": "https://github.com/little-thing/nick-editor/tree/main/packages/extension-table-handler#readme",
   "keywords": [
     "tiptap",
     "tiptap extension"
@@ -65,5 +65,14 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && rollup -c"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little-thing/nick-editor.git",
+    "directory": "packages/extension-table-handler"
+  },
+  "bugs": {
+    "url": "https://github.com/little-thing/nick-editor/issues"
+  },
+  "author": "little-thing <1107589563@qq.com>"
 }
