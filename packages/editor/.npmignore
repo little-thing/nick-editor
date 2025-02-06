@@ -7,7 +7,6 @@ tsconfig.json
 postcss.config.cjs
 eslint.config.js
 tailwind.config.ts
-tsconfig.node.json
 
 
 

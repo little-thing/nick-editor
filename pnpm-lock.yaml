@@ -60,6 +60,9 @@ importers:
       cssnano:
         specifier: ^7.0.6
         version: 7.0.6(postcss@8.4.49)
+      father:
+        specifier: ^4.5.2
+        version: 4.5.2(@babel/core@7.26.0)(@types/node@20.17.6)(styled-components@6.1.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.97.1(@swc/core@1.10.8(@swc/helpers@0.5.5)))
       postcss:
         specifier: ^8.4.49
         version: 8.4.49
@@ -236,6 +239,9 @@ importers:
       '@tiptap-pro/extension-unique-id':
         specifier: ^2.8.1
         version: 2.17.2(@tiptap/core@2.11.2(@tiptap/pm@2.11.2))(@tiptap/pm@2.11.2)
+      '@tiptap/core':
+        specifier: ^2.11.2
+        version: 2.11.2(@tiptap/pm@2.11.2)
       '@tiptap/extension-bold':
         specifier: ^2.4.0
         version: 2.11.2(@tiptap/core@2.11.2(@tiptap/pm@2.11.2))
@@ -369,7 +375,7 @@ importers:
         specifier: ^11.0.5
         version: 11.0.5
       yjs:
-        specifier: ^13.6.22
+        specifier: ^13.6.18
         version: 13.6.22
     devDependencies:
       '@libs/eslint-config':
@@ -10811,7 +10817,7 @@ snapshots:
 
   babel-plugin-dynamic-import-node@2.3.3:
     dependencies:
-      object.assign: 4.1.5
+      object.assign: 4.1.7
 
   babel-plugin-module-resolver@4.1.0:
     dependencies:
