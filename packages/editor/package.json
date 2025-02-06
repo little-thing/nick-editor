@@ -2,45 +2,19 @@
   "name": "@nick-editor/editor",
   "version": "1.0.5",
   "description": "文档编辑器,还原语雀的便捷操作",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/types/index.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "umd": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
-    "./index.css": {
-      "import": "./dist/esm/index.css",
-      "require": "./dist/cjs/index.css"
-    },
-    "./styles/*": {
-      "import": "./dist/esm/styles/*.css",
-      "require": "./dist/cjs/styles/*.css"
-    },
-    "./components/*": {
-      "types": "./dist/types/components/*.d.ts",
-      "import": "./dist/esm/components/*.js",
-      "require": "./dist/cjs/components/*.js"
-    },
-    "./lib/*": {
-      "types": "./dist/types/lib/*.d.ts",
-      "import": "./dist/esm/lib/*.js",
-      "require": "./dist/cjs/lib/*.js"
-    },
-    "./hooks/*": {
-      "types": "./dist/types/hooks/*.d.ts",
-      "import": "./dist/esm/hooks/*.js",
-      "require": "./dist/cjs/hooks/*.js"
-    },
-    "./extensions/*": {
-      "types": "./dist/types/extensions/*.d.ts",
-      "import": "./dist/esm/extensions/*.js",
-      "require": "./dist/cjs/extensions/*.js"
-    }
+    "./index.css": "./dist/index.css"
   },
-  "type": "module",
   "files": [
     "dist",
     "package.json",
@@ -50,11 +24,8 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "dev": "father dev",
-    "build": "ANALYZE=1 father build && tsc --emitDeclarationOnly ",
-    "build:deps": "father prebundle",
-    "build:css": "NODE_ENV=production postcss src/styles/**/*.css --base src --dir dist/esm/styles --config postcss.config.cjs && NODE_ENV=production postcss src/styles/**/*.css --base src --dir dist/cjs/styles --config postcss.config.cjs",
-    "prepublishOnly": "father doctor && npm run build"
+    "analyze": "ANALYZE=true rollup -c",
+    "build": "npm run clean && rollup -c"
   },
   "private": false,
   "license": "MIT",
@@ -170,9 +141,7 @@
     "eslint": "^9.15.0",
     "eslint-plugin-import-helpers": "^2.0.1",
     "eslint-plugin-react-refresh": "^0.4.18",
-    "father": "^4.3.8",
     "postcss": "^8.4.49",
-    "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -182,7 +151,6 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^3.4.17",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-scoped-groups": "^2.0.0",
-    "yjs": "^13.6.18"
+    "tailwindcss-scoped-groups": "^2.0.0"
   }
 }

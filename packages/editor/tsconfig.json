@@ -11,6 +11,7 @@
     "checkJs": false,
     "types": ["./src/typings.d.ts"],
     "paths": {
+      "@nick-editor/*": ["packages/*/src", "packages/*/dist"],
       "@/*": ["./*"]
     },
     "lib": [
