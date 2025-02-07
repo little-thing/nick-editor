@@ -2,14 +2,19 @@ import { mergeAttributes, Node, findParentNode } from '@tiptap/core';
 import { Plugin } from '@tiptap/pm/state';
 import { Decoration, DecorationSet } from '@tiptap/pm/view';
 import { findTable, findTableWrapper, getCellsInColumn, isRowSelected, selectRow, findRow, listRows } from '@/utils';
+import { ReactNodeViewRenderer } from '@tiptap/react';
+import { TableHandlerView } from '@/TableHandlerView';
 
 declare module '@tiptap/core' {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  //   interface Commands<ReturnType> {
-  //     tableHandler: {
-  //         // 这里可以添加表格处理相关的命令
-  //     }
-  //   }
+  interface Commands<ReturnType> {
+    tableWrapper: {
+      /**
+       * 打开菜单
+       * @example editor.commands.openMenu()
+       */
+      openMenu: (isOpen?: boolean) => ReturnType;
+    };
+  }
 }
 
 export interface TableHandlerOptions {
@@ -26,6 +31,9 @@ export const TableWrapper = Node.create<TableHandlerOptions>({
   addOptions() {
     return {
       HTMLAttributes: {},
+      isOpenMenu: {
+        default: true,
+      },
     };
   },
 
@@ -57,6 +65,15 @@ export const TableWrapper = Node.create<TableHandlerOptions>({
   addCommands() {
     return {
       // 这里可以添加命令实现
+      openMenu(isOpen = true) {
+        return ({ state, chain }) => {
+          return chain()
+            .updateAttributes(this.name, {
+              isOpenMenu: isOpen,
+            })
+            .run();
+        };
+      },
     };
   },
 
@@ -116,7 +133,7 @@ export const TableWrapper = Node.create<TableHandlerOptions>({
                 heightGrip.style.display = 'none';
 
                 // 定义底边检测的敏感区域（比如5像素）
-                const bottomThreshold = 2;
+                const bottomThreshold = 3;
 
                 // 检查鼠标是否在行的底边附近
                 if (Math.abs(rect.bottom - mouseY) <= bottomThreshold) {
@@ -256,9 +273,24 @@ export const TableWrapper = Node.create<TableHandlerOptions>({
 
             return DecorationSet.create(state.doc, decorations);
           },
+          handleDOMEvents: {
+            contextmenu: (view, event) => {
+              this.editor.commands.openMenu();
+              const target = event.target as HTMLElement;
+              if (target.closest('table')) {
+                event.preventDefault();
+                return true;
+              }
+              return false;
+            },
+          },
         },
       }),
     ];
+  },
+
+  addNodeView() {
+    return ReactNodeViewRenderer(TableHandlerView);
   },
 });
 

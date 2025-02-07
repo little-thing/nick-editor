@@ -1,6 +1,6 @@
 .ProseMirror {
   .table-container {
-    @apply my-12 relative;
+    @apply  relative;
   }
 
   .tableWrapper {
