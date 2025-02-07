@@ -4,7 +4,7 @@
   }
 
   .tableWrapper {
-    @apply w-full  my-12 overflow-x-auto relative overflow-y-hidden;
+    @apply w-full  overflow-x-auto relative overflow-y-hidden;
     padding-top: 12px;
   }
 

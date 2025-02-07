@@ -1,5 +1,11 @@
 # @nick-editor/editor
 
+## 1.0.6
+
+### Patch Changes
+
+- 导出hooks
+
 ## 1.0.5
 
 ### Patch Changes

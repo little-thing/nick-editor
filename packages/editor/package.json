@@ -1,6 +1,6 @@
 {
   "name": "@nick-editor/editor",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "文档编辑器,还原语雀的便捷操作",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
