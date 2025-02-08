@@ -8,6 +8,7 @@ export * from './components/Spinner/index.js';
 export * from './components/Tooltip/index.js';
 export * from './components/Panel/index.js';
 export * from './components/PopoverMenu.js';
+export * from './components/ContextMenu.js';
 export * from './components/Icon.js';
 export * from './components/Surface.js';
 export * from './components/Toolbar.js';

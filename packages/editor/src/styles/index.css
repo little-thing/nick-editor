@@ -29,7 +29,7 @@
   }
 
   & > .react-renderer {
-    @apply my-12 first:mt-0 last:mb-0;
+    @apply  first:mt-0 last:mb-0;
   }
 
   &.resize-cursor {

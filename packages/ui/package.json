@@ -34,7 +34,6 @@
     "prepublishOnly": "father doctor && npm run build"
   },
   "devDependencies": {
-    "father": "^4.5.2",
     "@libs/eslint-config": "workspace:*",
     "@libs/typescript-config": "workspace:*",
     "@tailwindcss/typography": "^0.5.16",
@@ -49,6 +48,7 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "cssnano": "^7.0.6",
+    "father": "^4.5.2",
     "lucide-react": "^0.471.1",
     "postcss": "^8.4.49",
     "postcss-import": "^16.1.0",
@@ -70,10 +70,11 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
+    "@radix-ui/react-context-menu": "^2.2.6",
+    "@radix-ui/react-popover": "^1.1.4",
     "@radix-ui/react-slot": "^1.1.1",
     "@tippyjs/react": "^4.2.6",
-    "tippy.js": "^6.3.7",
-    "@radix-ui/react-popover": "^1.1.4"
+    "tippy.js": "^6.3.7"
   },
   "repository": {
     "type": "git",

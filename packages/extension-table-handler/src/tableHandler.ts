@@ -123,29 +123,26 @@ export const TableWrapper = Node.create<TableHandlerOptions>({
                 return;
               }
 
-              const targetRow = (e.target as HTMLElement).closest('tr'); // 获取鼠标悬停的行
+              heightGrip.style.display = 'none';
 
-              if (targetRow) {
-                const rect = targetRow.getBoundingClientRect(); // 获取行的位置
-                const tableRect = tableElement.getBoundingClientRect(); // 获取表格的位置
-                const mouseY = e.clientY; // 获取鼠标Y坐标
+              // 获取所有行
+              const allRows = tableElement.querySelectorAll('tr');
+              const mouseY = e.clientY;
 
-                heightGrip.style.display = 'none';
+              // 遍历所有行检查是否在敏感区域内
+              allRows.forEach((row, index) => {
+                const rect = row.getBoundingClientRect();
+                const tableRect = tableElement.getBoundingClientRect();
+                const threshold = 3;
 
-                // 定义底边检测的敏感区域（比如5像素）
-                const bottomThreshold = 3;
-
-                // 检查鼠标是否在行的底边附近
-                if (Math.abs(rect.bottom - mouseY) <= bottomThreshold) {
-                  rowIndex = Array.from(targetRow.parentElement?.children || []).indexOf(targetRow); // 获取行索引
-                  // const x = rect.left - tableRect.left; // 相对于表格的x坐标
-                  const y = rect.bottom - tableRect.top; // 相对于表格的y坐标
-                  // console.log(`行索引: ${rowIndex}, translate(${x}px, ${y}px)`); // 输出行索引和位置信息
-                  // heightGrip.style.transform = `translateY(${y}px)`;
+                // 检查鼠标是否在当前行的底边附近（上下各3像素的区域）
+                if (Math.abs(rect.bottom - mouseY) <= threshold) {
+                  rowIndex = index;
+                  const y = rect.bottom - tableRect.top-3;
                   heightGrip.style.display = 'block';
                   heightGrip.style.top = `${y}px`;
                 }
-              }
+              });
             };
 
             tableElement.addEventListener('mousemove', changeHover);

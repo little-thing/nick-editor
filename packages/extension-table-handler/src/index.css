@@ -35,8 +35,8 @@
   left: 0;
   right: 0;
   top:0;
-  height: 6px;
-  box-sizing: border-box;
+  height: 4px;
+  /* box-sizing: border-box; */
   background-clip: padding-box;
   border: 1.5px solid  transparent !important;
   background-color: #2f8ef4 !important;
@@ -100,4 +100,105 @@
     }
   }
 }
+
+/* 表格上下文菜单样式 */
+.table-context-menu {
+  @apply min-w-[200px] bg-white rounded-lg shadow-lg py-1 border border-gray-200 z-50;
+  @apply dark:bg-gray-800 dark:border-gray-700;
+}
+
+.menu-label {
+  @apply px-3 py-2 text-sm text-gray-500 font-medium;
+  @apply dark:text-gray-400;
+}
+
+.menu-item {
+  @apply flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer;
+  @apply dark:text-gray-200 dark:hover:bg-gray-700;
+  position: relative;
+  @apply h-4;
+}
+
+.menu-icon {
+  @apply w-4 h-4 mr-2 text-gray-500;
+  @apply dark:text-gray-400;
+}
+
+.menu-hint {
+  @apply ml-auto text-xs text-gray-400;
+  @apply dark:text-gray-500;
+}
+
+.menu-separator {
+  @apply my-1 h-px bg-gray-200;
+  @apply dark:bg-gray-700;
+}
+
+.delete-item {
+  @apply text-red-600 hover:bg-red-50;
+  @apply dark:text-red-400 dark:hover:bg-red-900/20;
+}
+
+.delete-item .menu-icon {
+  @apply text-red-600;
+  @apply dark:text-red-400;
+}
+
+/* 确保菜单项有足够的空间显示提示文本 */
+.menu-item {
+  @apply justify-between;
+}
+
+/* 添加菜单项的悬停效果 */
+.menu-item:hover .menu-icon {
+  @apply text-gray-700;
+  @apply dark:text-gray-200;
+}
+
+/* 删除项的特殊悬停效果 */
+.delete-item:hover .menu-icon {
+  @apply text-red-700;
+  @apply dark:text-red-300;
+}
+
+/* 菜单输入框样式 */
+.menu-input-wrapper {
+  @apply flex items-center gap-1;
+}
+
+.menu-input {
+  @apply w-12 h-6 px-1 text-center text-sm border border-gray-200 rounded;
+  @apply dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200;
+  -moz-appearance: textfield;
+}
+
+.menu-input::-webkit-outer-spin-button,
+.menu-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 确保输入框在hover时不会改变背景色 */
+.menu-item:hover .menu-input {
+  @apply bg-white;
+  @apply dark:bg-gray-700;
+}
+
+/* 输入框获得焦点时的样式 */
+.menu-input:focus {
+  @apply outline-none border-blue-500;
+  @apply dark:border-blue-400;
+}
+
+/* 输入框焦点状态下的菜单项样式 */
+.menu-item.focused {
+  @apply bg-transparent hover:bg-transparent;
+  @apply dark:bg-transparent dark:hover:bg-transparent;
+}
+
+.menu-item.focused .menu-input {
+  @apply border-blue-500;
+  @apply dark:border-blue-400;
+}
+
 
