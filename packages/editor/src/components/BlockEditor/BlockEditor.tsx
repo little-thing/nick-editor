@@ -6,7 +6,6 @@ import '../../styles/index.css';
 
 import ImageBlockMenu from '../../extensions/ImageBlock/components/ImageBlockMenu';
 import { ColumnsMenu } from '../../extensions/MultiColumn/menus';
-import { TableColumnMenu, TableRowMenu, TableCellMenu } from '@nick-editor/extension-table-handler';
 import { useBlockEditor } from '../../hooks/useBlockEditor';
 import { LinkMenu } from '../menus';
 import { ContentItemMenu } from '../menus';
@@ -63,9 +62,6 @@ export const BlockEditor = ({
         <ContentItemMenu editor={editor} />
         <LinkMenu editor={editor} appendTo={menuContainerRef} />
         <ColumnsMenu editor={editor} appendTo={menuContainerRef} />
-        <TableCellMenu editor={editor} appendTo={menuContainerRef} />
-        <TableRowMenu editor={editor} appendTo={menuContainerRef} />
-        <TableColumnMenu editor={editor} appendTo={menuContainerRef} />
         <ImageBlockMenu editor={editor} appendTo={menuContainerRef} />
         {children}
       </EasyScrollContainer>
