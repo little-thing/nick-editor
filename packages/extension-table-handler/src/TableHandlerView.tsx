@@ -1,8 +1,16 @@
 import { NodeViewProps } from '@tiptap/core';
-import { NodeViewWrapper } from '@tiptap/react';
+import { NodeViewWrapper, NodeViewContent } from '@tiptap/react';
 
 export function TableHandlerView(props: NodeViewProps) {
-  const { node, updateAttributes, deleteNode, editor } = props;
+  const { node } = props;
 
-  return <NodeViewWrapper className={'tableHandler'}></NodeViewWrapper>;
+  return (
+    <NodeViewWrapper 
+      className="tableHandler"
+      data-type={node.type.name}
+      {...node.attrs}
+    >
+      <NodeViewContent />
+    </NodeViewWrapper>
+  );
 }
