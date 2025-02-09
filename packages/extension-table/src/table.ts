@@ -19,6 +19,8 @@ import {
   tableEditing,
   toggleHeader,
   toggleHeaderCell,
+  isInTable,
+  selectedRect,
 } from '@tiptap/pm/tables';
 import { EditorView, NodeView } from '@tiptap/pm/view';
 
@@ -26,6 +28,7 @@ import { TableView } from './TableView.js';
 import { createColGroup } from './utilities/createColGroup.js';
 import { createTable } from './utilities/createTable.js';
 import { deleteTableWhenAllCellsSelected } from './utilities/deleteTableWhenAllCellsSelected.js';
+import { isPosInSelectedCells } from './utilities/isPosInSelectedRect.js';
 
 export interface TableOptions {
   /**
@@ -223,6 +226,14 @@ declare module '@tiptap/core' {
        * @example editor.commands.hasTableContentAfterCursor()
        */
       hasTableContentAfterCursor: () => ReturnType;
+
+      /**
+       * Focus on the cell at the given position
+       * @param pos The position of the cell to focus on
+       * @returns True if the command was successful, otherwise false
+       * @example editor.commands.focusCell(1)
+       */
+      focusCell: (pos: number) => ReturnType;
     };
   }
 
@@ -427,6 +438,18 @@ export const Table = Node.create<TableOptions>({
           const textAfterCursor = textContent.slice(cursorPos).trim();
 
           return textAfterCursor.length > 0;
+        },
+      focusCell:
+        (pos: number) =>
+        ({ state, dispatch }) => {
+          if (!isInTable(state)) return false;
+
+          const isInSelectedRect = isPosInSelectedCells(state, pos);
+          if (isInSelectedRect) return true;
+
+          dispatch(state.tr.setSelection(TextSelection.create(state.doc, pos)));
+
+          return true;
         },
     };
   },

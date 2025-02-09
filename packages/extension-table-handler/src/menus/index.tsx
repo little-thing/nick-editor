@@ -12,6 +12,24 @@ type TableHandlerMenuProps = {
 export function TableHandlerMenu(props: TableHandlerMenuProps) {
   const { editor, children } = props;
 
+  const handleContextMenu = useCallback(
+    (event: React.MouseEvent) => {
+      // 找到点击的单元格
+      const cell = (event.target as HTMLElement).closest('td, th');
+      if (!cell) return;
+
+      // 获取鼠标点击位置对应的文档位置
+      const cellPos = editor.view.posAtCoords({
+        left: event.clientX,
+        top: event.clientY,
+      });
+
+      editor.chain().focusCell(cellPos.inside).run();
+      event.stopPropagation();
+    },
+    [editor]
+  );
+
   const onAddColumnBefore = useCallback(
     (count: number) => {
       for (let i = 0; i < count; i++) {
@@ -66,7 +84,9 @@ export function TableHandlerMenu(props: TableHandlerMenuProps) {
 
   return (
     <ContextMenu.Root>
-      <ContextMenu.Trigger asChild>{children}</ContextMenu.Trigger>
+      <ContextMenu.Trigger asChild onContextMenu={handleContextMenu}>
+        {children}
+      </ContextMenu.Trigger>
 
       <ContextMenu.Portal>
         <ContextMenu.Content className="table-context-menu">
