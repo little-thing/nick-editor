@@ -1,7 +1,7 @@
 {
   "name": "@nick-editor/extension-table",
   "description": "table extension for tiptap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/little-thing/nick-editor/tree/main/packages/extension-table#readme",
   "keywords": [
     "tiptap",

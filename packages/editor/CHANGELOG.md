@@ -1,5 +1,11 @@
 # @nick-editor/editor
 
+## 1.0.7
+
+### Patch Changes
+
+- 更新依赖
+
 ## 1.0.6
 
 ### Patch Changes

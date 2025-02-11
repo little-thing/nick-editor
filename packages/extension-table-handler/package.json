@@ -1,7 +1,7 @@
 {
   "name": "@nick-editor/extension-table-handler",
   "description": "table handler extension for tiptap",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/little-thing/nick-editor/tree/main/packages/extension-table-handler#readme",
   "keywords": [
     "tiptap",
