@@ -1,6 +1,6 @@
 {
   "name": "@nick-editor/editor",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "文档编辑器,还原语雀的便捷操作",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -49,7 +49,7 @@
   ],
   "author": "little-thing <1107589563@qq.com>",
   "peerDependencies": {
-    "@nick-editor/extension-table": "^1.0.1",
+    "@nick-editor/extension-table": "^1.0.3",
     "@nick-editor/extension-table-handler": "^1.0.2",
     "@tiptap/core": "^2.11.2",
     "@tiptap/pm": "^2.4.0",

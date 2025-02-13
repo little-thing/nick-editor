@@ -1,5 +1,17 @@
 # @nick-editor/editor
 
+## 1.0.9
+
+### Patch Changes
+
+- 更新依赖
+
+## 1.0.8
+
+### Patch Changes
+
+- 编辑器容器样式适配问题修复
+
 ## 1.0.7
 
 ### Patch Changes

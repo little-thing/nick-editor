@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.3
+
+### Patch Changes
+
+- 编辑器容器样式适配问题修复
+
 ## 1.0.2
 
 ### Patch Changes
