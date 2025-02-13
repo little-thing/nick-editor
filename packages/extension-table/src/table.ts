@@ -290,7 +290,6 @@ export const Table = Node.create<TableOptions>({
 
   renderHTML({ node, HTMLAttributes }) {
     const { colgroup, tableWidth, tableMinWidth } = createColGroup(node, this.options.cellMinWidth);
-
     const table: DOMOutputSpec = [
       'table',
       mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, {
@@ -300,7 +299,7 @@ export const Table = Node.create<TableOptions>({
       ['tbody', 0],
     ];
 
-    return table;
+    return ['div', { class: 'table-container' }, ['div', { class: 'tableWrapper' }, table]];
   },
 
   addCommands() {

@@ -9,7 +9,7 @@
   "scripts": {
     "build": "turbo run build",
     "build:packages": "turbo run build --filter=@nick-editor/*",
-    "dev": "turbo dev",
+    "dev:demo": "turbo dev --filter=react-demo",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "publish-packages": "turbo run build:packages && changeset version && changeset publish"
