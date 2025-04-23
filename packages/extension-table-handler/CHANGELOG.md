@@ -1,5 +1,11 @@
 # @nick-editor/extension-table-handler
 
+## 1.0.4
+
+### Patch Changes
+
+- 样式调整
+
 ## 1.0.3
 
 ### Patch Changes

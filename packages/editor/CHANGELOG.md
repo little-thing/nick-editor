@@ -1,5 +1,11 @@
 # @nick-editor/editor
 
+## 1.0.10
+
+### Patch Changes
+
+- 更新依赖：table-handler@1.0.4
+
 ## 1.0.9
 
 ### Patch Changes
