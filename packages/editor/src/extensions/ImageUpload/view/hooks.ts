@@ -4,22 +4,21 @@ import { EditorContext } from '@/context/EditorContext';
 
 export const useUploader = ({ onUpload }: { onUpload: (url: string) => void }) => {
   const [loading, setLoading] = useState(false);
-  const {uploadImage} = useContext(EditorContext);
+  const { uploadFile } = useContext(EditorContext);
 
-  const uploadFile = useCallback(async (file: File) => {
+  const handleUpload = useCallback(async (file: File) => {
     setLoading(true);
     try {
-      const url = await uploadImage(file);
-
+      const url = await uploadFile(file);
       onUpload(url);
     } catch (errPayload: any) {
       const error = errPayload?.response?.data?.error || 'Something went wrong';
       toast.error(error);
     }
     setLoading(false);
-  }, [onUpload]);
+  }, [onUpload, uploadFile]);
 
-  return { loading, uploadFile };
+  return { loading, uploadFile: handleUpload };
 };
 
 export const useFileUpload = () => {

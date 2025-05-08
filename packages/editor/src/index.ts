@@ -2,3 +2,4 @@ export * from './components/BlockEditor';
 export * from './components/EditorRender';
 export * from './lib/extensionLoader';
 export * from './hooks';
+export { EditorContext } from './context/EditorContext';

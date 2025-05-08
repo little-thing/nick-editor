@@ -35,12 +35,12 @@ export const useBlockEditor = ({
   const leftSidebar = useSidebar();
   const [collabState, setCollabState] = useState<WebSocketStatus>(WebSocketStatus.Connecting);
 
-  const { uploadImage} = useContext(EditorContext);
+  const { uploadFile} = useContext(EditorContext);
 
   const extensions = useMemo(() => {
     const res = [
       ...ExtensionKit({
-        uploadFile: uploadImage,
+        uploadFile: uploadFile,
         provider: null,
       }),
       Collaboration.configure({

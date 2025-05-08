@@ -19,8 +19,21 @@
 
     td,
     th {
-      @apply border border-black/10 min-w-[100px] p-2 relative text-left align-top h-[1px] ;
+      /* @apply border border-black/10 min-w-[100px] p-2 relative text-left align-top h-[1px]; */
+      @apply border border-black/10 min-w-[100px] p-2 relative text-left h-[1px];
       @apply dark:border-white/20;
+
+      &[data-vertical-align="top"] {
+        @apply align-top;
+      }
+
+      &[data-vertical-align="middle"] {
+        @apply align-middle;
+      }
+
+      &[data-vertical-align="bottom"] {
+        @apply align-bottom;
+      }
 
       &:first-of-type:not(a) {
         @apply mt-0;

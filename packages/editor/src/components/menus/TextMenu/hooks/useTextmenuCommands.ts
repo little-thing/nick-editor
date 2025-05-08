@@ -15,7 +15,11 @@ export const useTextmenuCommands = (editor: Editor) => {
   const onAlignCenter = useCallback(() => editor.chain().focus().setTextAlign('center').run(), [editor]);
   const onAlignRight = useCallback(() => editor.chain().focus().setTextAlign('right').run(), [editor]);
   const onAlignJustify = useCallback(() => editor.chain().focus().setTextAlign('justify').run(), [editor]);
-
+ 
+  const onJustifyStart=useCallback(() => editor.chain().focus().setVerticalAlign('top').run(), [editor]);
+  const onJustifyCenter=useCallback(() => editor.chain().focus().setVerticalAlign('middle').run(), [editor]);
+  const onJustifyEnd=useCallback(() => editor.chain().focus().setVerticalAlign('bottom').run(), [editor]);
+  
   const onChangeColor = useCallback((color: string) => editor.chain().setColor(color).run(), [editor]);
   const onClearColor = useCallback(() => editor.chain().focus().unsetColor().run(), [editor]);
 
@@ -65,6 +69,9 @@ export const useTextmenuCommands = (editor: Editor) => {
     onAlignCenter,
     onAlignRight,
     onAlignJustify,
+    onJustifyStart,
+    onJustifyCenter,
+    onJustifyEnd,
     onChangeColor,
     onClearColor,
     onChangeHighlight,

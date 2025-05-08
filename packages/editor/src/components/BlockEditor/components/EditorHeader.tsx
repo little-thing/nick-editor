@@ -40,6 +40,11 @@ export const EditorHeader = ({ editor }: TextMenuProps) => {
   const blockOptions = useTextmenuContentTypes(editor);
   const commands = useTextmenuCommands(editor);
   const states = useTextmenuStates(editor);
+  
+  // 添加表格状态判断
+  const isInTable = editor.isActive('table');
+  const isTableSelected = editor.isActive('table') && editor.state.selection.$anchor.parent.type.name === 'tableCell';
+
   const undo = () => {
     editor.commands.undo();
   };
@@ -221,7 +226,7 @@ export const EditorHeader = ({ editor }: TextMenuProps) => {
           icon={<Icon name="AlignRight" />}
           onClick={commands.onAlignRight}
           isActive={states.isAlignRight}
-        />
+        /> 
 
         {/* 两端对齐 */}
         <HeaderButton
@@ -230,6 +235,39 @@ export const EditorHeader = ({ editor }: TextMenuProps) => {
           onClick={commands.onAlignJustify}
           isActive={states.isAlignJustify}
         />
+
+        {/* 垂直对齐按钮组 */}
+        <div className="flex items-center gap-1">
+          {/* 垂直靠上 */}
+          <HeaderButton
+            tooltip="垂直靠上"
+            icon={<Icon name="AlignStartHorizontal" />}
+            onClick={commands.onJustifyStart}
+            isActive={states.isAlignTop}
+            isDisabled={!isInTable}
+            className={!isInTable ? 'opacity-50 cursor-not-allowed' : ''}
+          />
+
+          {/* 垂直居中 */}
+          <HeaderButton
+            tooltip="垂直居中"
+            icon={<Icon name="AlignCenterHorizontal" />}
+            onClick={commands.onJustifyCenter}
+            isActive={states.isAlignMiddle}
+            isDisabled={!isInTable}
+            className={!isInTable ? 'opacity-50 cursor-not-allowed' : ''}
+          />
+
+          {/* 垂直靠下 */}
+          <HeaderButton
+            tooltip="垂直靠下"
+            icon={<Icon name="AlignEndHorizontal" />}
+            onClick={commands.onJustifyEnd}
+            isActive={states.isAlignBottom}
+            isDisabled={!isInTable}
+            className={!isInTable ? 'opacity-50 cursor-not-allowed' : ''}
+          />
+        </div>
       </div>
     </TooltipPrimitive.Provider>
   );

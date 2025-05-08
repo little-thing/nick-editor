@@ -42,6 +42,7 @@ import {
   Column,
   TaskItem,
   TaskList,
+  VerticalAlign,
 } from '.';
 import { ImageUpload } from './ImageUpload';
 import { TableOfContentsNode } from './TableOfContentsNode';
@@ -130,6 +131,9 @@ export const ExtensionKit = ({ provider, uploadFile }: ExtensionKitProps) => [
     },
   }).configure({
     types: ['heading', 'paragraph'],
+  }),
+  VerticalAlign.configure({
+    defaultAlignment: 'top',
   }),
   Subscript,
   Superscript,

@@ -21,7 +21,7 @@ export const MenuList = React.forwardRef((props: MenuListProps, ref) => {
   const activeItem = useRef<HTMLButtonElement>(null);
   const [selectedGroupIndex, setSelectedGroupIndex] = useState(0);
   const [selectedCommandIndex, setSelectedCommandIndex] = useState(0);
-
+ 
   // Anytime the groups change, i.e. the user types to narrow it down, we want to
   // reset the current selection to the first menu item
   useEffect(() => {
